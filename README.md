@@ -232,6 +232,8 @@ En el histograma de probabilidades predichas se puede ver que el modelo separa b
 
 El modelo alcanza una accuracy de aproximadamente el 82% en test, lo que es un buen resultado teniendo en cuenta que la red neuronal está implementada desde cero sin ninguna librería de deep learning.
 
+Aunque el modelo alcanza un accuracy del 82%, su capacidad predictora es significativamente mayor para identificar a los pasajeros que no sobrevivieron que para los que sí lo hicieron, lo cual se explica por el desbalance de clases: hay considerablemente más datos de personas que fallecieron que de personas que sobrevivieron.
+
 Las variables más importantes son el sexo, la clase y la tarifa. Estas tres variables juntas capturan la mayor parte de la información. El resto (título, tamaño de familia, cubierta...) aporta algo pero no de forma tan decisiva.
 
 La parte más interesante fue implementar el backpropagation a mano. Entender por qué se necesita guardar la preactivación `z` para ReLU pero basta con `a` para Sigmoid, o por qué la combinación Sigmoid + cross-entropy simplifica tanto el gradiente de la última capa, son cosas que se aprenden mucho mejor escribiendo el código que leyendo la teoría.
